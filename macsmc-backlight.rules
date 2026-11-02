@@ -1,0 +1,2 @@
+# Save and restore MacBook keyboard backlight (macsmc-led) across reboots via systemd-backlight
+SUBSYSTEM=="leds", KERNEL=="macsmc-led", TAG+="systemd", ENV{SYSTEMD_WANTS}+="systemd-backlight@leds:macsmc-led.service"
