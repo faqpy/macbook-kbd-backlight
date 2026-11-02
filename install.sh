@@ -4,7 +4,7 @@ set -e
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEVICE="macsmc-led"
 
-echo "=== MacBook Keyboard Backlight Installer ==="
+echo "MacBook Keyboard Backlight Installer"
 
 if [ ! -d "/sys/class/leds/$DEVICE" ]; then
     echo "Device '$DEVICE' was not found under /sys/class/leds/."
