@@ -1,5 +1,4 @@
 # macbook-kbd-backlight
-
 Fix keyboard backlight on MacBooks running Linux with i3wm, Sway, or any standalone window manager.
 
 ![MacBook Air](https://img.shields.io/badge/MacBook-Air%207%2C2-333?logo=apple&logoColor=white)
@@ -10,7 +9,6 @@ Fix keyboard backlight on MacBooks running Linux with i3wm, Sway, or any standal
 ---
 
 ## The Problem
-
 On MacBooks running Linux, the **keyboard backlight does not work out of the box** in standalone window managers like i3 or Sway. The brightness keys (`F5`/`F6`) do nothing, and the backlight remains completely off after every boot.
 
 ### Why this happens:
@@ -23,7 +21,6 @@ On MacBooks running Linux, the **keyboard backlight does not work out of the box
 ---
 
 ## Method A: Automated Setup
-
 Clone the repository and run the interactive installer:
 
 ```bash
@@ -38,11 +35,9 @@ The script will verify your hardware, test brightness levels, configure your `~/
 ---
 
 ## Method B: Manual Fix
-
 You can apply the entire fix manually by:
 
 ### Step 1: Install `brightnessctl`
-
 Make sure `brightnessctl` is installed on your distro:
 
 ```bash
@@ -57,7 +52,6 @@ sudo dnf install brightnessctl
 ```
 
 ### Step 2: Verify Your LED Device Name
-
 Check that your MacBook's keyboard LED interface exists:
 
 ```bash
@@ -82,7 +76,6 @@ brightnessctl --device='macsmc-led' set 0
 ---
 
 ### Step 3: Add Keybindings to i3wm (or Sway)
-
 Open your window manager config file:
 ```bash
 nano ~/.config/i3/config
@@ -113,7 +106,6 @@ i3-msg reload
 ---
 
 ## Keybindings Reference
-
 | Keybinding | Action |
 |---|---|
 | `F6` (`XF86KbdBrightnessUp`) | Increase keyboard brightness by 10% |
@@ -124,7 +116,6 @@ i3-msg reload
 ---
 
 ## Troubleshooting
-
 <details>
 <summary><b>1. brightnessctl returns "Device not found"</b></summary>
 
@@ -163,5 +154,4 @@ If pressing `F5`/`F6` doesn't change brightness, either press `Fn + F5` / `Fn + 
 ---
 
 ## License
-
 Distributed under the [MIT License](LICENSE).
